@@ -1,0 +1,69 @@
+﻿Git and Github Part-2
+Ans no. 1: In Windows,firstly we will open command prompt(it is there in the start menu) and press Enter and type git –version.Hence,if git is installed on the system it will show the version on our computer command prompt,if not then we will add a git to the Path variable
+       On Linux or Mac,firstly we will open the Terminal and Run the command and type git –version.Hence,if git is installed on the system of our computer it will show the version and if not then we will have to download git for Mac or Windows.
+Ans no. 2: To initialize a new git repository,we have to follow these steps given below:
+* In windows after adding Command prompt to our operating System and type git init.
+* In Mac or Linux we will do the same and type the Command git init.
+Ans no. 3: To tell git about my name and email we will have to go through these steps:
+* Open Terminal or Command Prompt:If you are using Unix-like system(linux or macOS) ,you can open a terminal.if you are using Windows then open command prompt or Git bash and then we will set a username by a command and type (git config –global user.name “Your Name”).
+* Setting the Email Address: We will do the same steps and add the command (git config –global user.email “Your Email Address”).
+
+
+Ans no. 4:To add a file to the staging area we will follow the steps given below:
+* Open Terminal or Command Prompt:Navigate to the directory where the git repository is located.
+* Check git status: It’s a good practice to start by using the git status command to see the modified or untracked files.
+* Add the files to the Staging area: You can add a single file by using the git add <”file name”> or we can add all files by using the git add . command.
+* Again check status and commit the changes: we will check the files added to the staging area and commit those files to the repository by git commit -m “your first commit”.
+Ans no. 5:We can remove a file from the staging area by these following commands:
+1.  If a single file is ready to remove from staging area we will use the git reset HEAD file name 
+2. If all the files are ready to remove from the staging area we will use the git reset HEAD .
+Ans no. 6: When working with Git, creating a commit is essential for tracking your progress and saving changes to your repository and  make a commit:
+* Staging Changes:
+   * First, ensure that you’ve made the necessary changes to your files. Use git add to stage the changes you want to include in the commit. For example:
+git add <filename>
+   *    * Replace <filename> with the actual name of the file you modified.
+* Creating a Commit:
+   * Once your changes are staged, use the git commit command to create a snapshot of your work. You should always include a meaningful commit message to describe what you’ve done. Here’s the basic syntax:
+git commit -m "Your commit message here"
+   *    * Replace "Your commit message here" with a concise description of your changes.
+*       Viewing Commit History:
+   * To see the history of commits in your repository, use git log. It displays a list of commits along with their unique identifiers (hashes), authors, dates, and commit messages.
+* git log
+   * Each commit represents a point in your project’s development history.
+Ans no. 7:  To send your local changes to a remote Git repository, you’ll use the git push command. This action uploads your committed changes from your local branch to the corresponding branch on the remote repository. Here’s how to do it:
+1. Check Your Branch:
+   * First, ensure you’re on the correct branch. You can use git status to verify your current branch.
+   * For example, if you’re working on the main branch, make sure you’re checked out .
+2. Pull Latest Changes (Optional):
+   * It’s a good practice to pull any new changes from the remote before pushing your own.
+   * Run:
+git pull origin main
+   *    * This fetches the latest updates from the remote main branch and merges them into your local branch.
+3. Push Your Changes:
+   * Now, push your local commits to the remote repository:
+git push origin main
+   *    * Replace main with the name of your branch if you’re working on a different one.
+4. Common Options for git push:
+   * -f: Force a push (use with caution; it can overwrite existing commits).
+   * -u origin [branch]: Useful when pushing a new branch; create an upstream tracking branch.
+   * --all: Push all branches.
+   * --tags: Publish tags that aren’t yet in the remote repository.
+Ans no. 8: Certainly! Let’s explore the differences between “clone” and “full” in various contexts:
+1. Git Repositories:
+   * Clone: When you use git clone, you create a local copy of an existing Git repository. This copy includes all the files, branches, and commit history from the remote repository. It’s typically used once to set up your local workspace.
+   * Pull (or Fetch + Merge): After cloning, you can use git pull (or git fetch followed by git merge) to update your local copy with new commits from the remote repository. It synchronizes your local branch with the latest changes made by others. So, while clone gets you started, pull keeps your local copy up-to-date1.
+2. Virtual Machines (VMs):
+   * Full Clone:
+      * A full clone creates an independent copy of the original VM. It’s like creating a brand-new VM that operates separately from the parent VM.
+      * All configurations, settings, and data are duplicated, making it a complete and self-contained VM.
+   * Linked Clone:
+      * A linked clone is based on a snapshot of the parent VM. It shares the same base image and only stores the differences (delta) from that snapshot.
+      * Linked clones are space-efficient and quicker to create, but they rely on the parent VM for common data2.
+3. Disk Cloning vs. Entire Machine Backup:
+   * Clone:
+      * Creates an identical copy of a hard drive, including the operating system, applications, and data.
+      * Useful for migrating to a new drive or creating a backup for disaster recovery.
+   * Backup:
+      * Creates an image file containing essential data (files, OS, etc.) without necessarily copying the entire drive.
+      * Backups can be selective (e.g., only files) or comprehensive (entire drive).
+      * Unlike cloning, backups are often incremental and allow versioning3.
